@@ -1,4 +1,3 @@
-# Скрипт удаляет старые файлы и пустые папки
 import os
 import time
 
@@ -40,7 +39,6 @@ def delete_empty_dir(folder):
             os.rmdir(path)
     if empty_folders_in_this_run > 0:
         delete_empty_dir(folder)
-
 #===========================MAIN==================================
 start_time = time.asctime()
 for folder in folders:
