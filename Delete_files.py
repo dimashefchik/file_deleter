@@ -28,6 +28,7 @@ def delete_old_files(folder):
                 print('Deleting File: ' + str(file_name))
                 os.remove(file_name)                    #delete file
 
+            
 def delete_empty_dir(folder):
     global total_deleted_dirs
     empty_folders_in_this_run = 0                       # Delete parents folders
@@ -39,7 +40,9 @@ def delete_empty_dir(folder):
             os.rmdir(path)
     if empty_folders_in_this_run > 0:
         delete_empty_dir(folder)
+
 #===========================MAIN==================================
+
 start_time = time.asctime()
 for folder in folders:
     delete_old_files(folder)    # Delete old files
@@ -52,4 +55,3 @@ print('Total Deleted Files: ' + str(total_deleted_file))
 print('Total Deleted Empty Folders: ' + str(total_deleted_dirs))
 print('Finish Time: ' + str(finish_time))
 print('---------END OF FUNCTION--------')
-
